@@ -1,0 +1,26 @@
+{
+    "name": "smartttech/blog",
+    "description": "this is skeleton of Blog Seciton",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Smartttech\\Blog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Smarttech\\Blog\\BlogServiceProvider"
+          ]
+        }
+      },
+    "authors": [
+        {
+            "name": "jayesh",
+            "email": "jay@smarttech.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
