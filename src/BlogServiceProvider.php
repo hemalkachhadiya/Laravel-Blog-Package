@@ -1,6 +1,6 @@
 <?php
 
-namespace Smarttech\Blog;
+namespace Smartttech\Blog;
 
 use Illuminate\Support\ServiceProvider;
 
