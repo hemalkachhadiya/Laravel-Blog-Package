@@ -11,7 +11,7 @@
     "extra": {
         "laravel": {
           "providers": [
-            "Smarttech\\Blog\\BlogServiceProvider"
+            "Smartttech\\Blog\\BlogServiceProvider"
           ]
         }
       },
