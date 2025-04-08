@@ -9,10 +9,10 @@ class BlogServiceProvider extends ServiceProvider
     public function boot()
     {
                 // Load Routes
-        $this->loadRoutesFrom(__DIR__.'/routes/api.php');
+        // $this->loadRoutesFrom(__DIR__.'/routes/api.php');
 
-        // Load Migrations
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        // // Load Migrations
+        // $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }
 
     public function register()
