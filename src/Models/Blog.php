@@ -1,6 +1,6 @@
 <?php
 
-namespace Smarttech\Blog\Models;
+namespace Smartttech\Blog\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Smarttech\Blog\Controllers;
+namespace Smartttech\Blog\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
