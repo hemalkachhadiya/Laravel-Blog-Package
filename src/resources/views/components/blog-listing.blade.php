@@ -53,14 +53,15 @@
                     </p>
                     <div class="mt-auto text-end">
                         <button
-                        class="btn btn-sm btn-outline-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#blogModal"
-                        data-title="{{ $blog->title }}"
-                        data-content="{{ $blog->content }}"
-                    >
-                        Read More
-                    </button>
+    class="btn btn-sm btn-outline-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#blogModal"
+    data-title="{{ $blog->title }}"
+    data-content="{{ htmlspecialchars($blog->content, ENT_QUOTES) }}"
+>
+    Read More
+</button>
+
                                         </div>
                 </div>
             </div>
@@ -98,5 +99,6 @@
         blogModal.querySelector('#blogContent').innerHTML = content;
     });
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
