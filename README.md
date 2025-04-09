@@ -86,38 +86,6 @@ php artisan migrate
 ```
 
 
-1. **Install the package Via Composer:**
-   go to your projet terminal fire this command:
-```bash
-    composer require smartttech/blog:dev-main
-```
-2. **publish the packages Views:**
-  Publish the packages view or component
-```bash
-    php artisan vendor:publish --tag=blog-views
-```
-3. **Run the Migrations:**
-  add the tables in your Database:
-```bash 
-    php artisan migrate
-```
- 
-4. **Usage in your Project:**
-
-  - Blog Listing Componenet:
-
-   Use this in any Blade file to show all blog posts:
-```bash
-    <x-blog-listing />
-```
-
- - Blog Details Component:
-
-  When viewing a single blog post:
-```bash
-    <x-blog-details :blog="$blog" />
-```
-
 # About the Project
 
 **smartttech/blog** is a Laravel package designed to seamlessly integrate a complete blog system into your Laravel application. Whether you're building a CMS, a content-driven website, or just need a blogging module, this package helps you get up and running in minutes.
