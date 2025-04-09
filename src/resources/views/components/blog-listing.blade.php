@@ -52,8 +52,16 @@
                         {{ \Illuminate\Support\Str::limit($blog->content, 100) }}
                     </p>
                     <div class="mt-auto text-end">
-                        <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
-                    </div>
+                        <button
+                        class="btn btn-sm btn-outline-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#blogModal"
+                        data-title="{{ $blog->title }}"
+                        data-content="{{ $blog->content }}"
+                    >
+                        Read More
+                    </button>
+                                        </div>
                 </div>
             </div>
         </div>
@@ -64,3 +72,31 @@
 <div class="mt-4 d-flex justify-content-center">
     {{ $blogs->links('pagination::bootstrap-5') }}
 </div>
+{{-- Model --}}
+<div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="blogModalLabel">Blog Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="blogContent">Loading...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var blogModal = document.getElementById('blogModal');
+    blogModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var title = button.getAttribute('data-title');
+        var content = button.getAttribute('data-content');
+
+        blogModal.querySelector('.modal-title').textContent = title;
+        blogModal.querySelector('#blogContent').innerHTML = content;
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
