@@ -74,12 +74,12 @@ php artisan migrate
 
 
 ## Usage in your Project 
-### Blog Listing Componenet 
+- Blog Listing Componenet 
 #### Use this in any Blade file to show all blog posts:
 ```bash
 <x-blog-listing />
 ```
-### Blog Details Component
+-  Blog Details Component
 #### When viewing a single blog post: 
 ```bash
 <x-blog-details :blog="$blog" />
