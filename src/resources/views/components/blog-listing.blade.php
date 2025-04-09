@@ -44,7 +44,6 @@
 <!-- Blog Cards -->
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     @foreach ($blogs as $blog)
-    {{ dd($blog->content) }}
         <div class="col">
             <div class="card h-100 shadow-sm border-0">
                 <div class="card-body d-flex flex-column">
