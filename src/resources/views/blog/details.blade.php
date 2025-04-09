@@ -1,12 +1,11 @@
-@extends('layouts.app') {{-- ya jo bhi tera layout ho --}}
+@php
+    $slug = request()->route('slug'); // grab from URL
+    $blog = \Smartttech\Blog\Models\Blog::where('slug', $slug)->firstOrFail();
+@endphp
 
-@section('content')
-<div class="container mt-4">
-    <h2>{{ $blog->title }}</h2>
-    <p class="text-muted">Published on {{ $blog->created_at->format('d M Y') }}</p>
-    <hr>
-    <div>
+<div class="container py-4">
+    <h1 class="mb-3">{{ $blog->title }}</h1>
+    <div class="text-muted">
         {!! nl2br(e($blog->content)) !!}
     </div>
 </div>
-@endsection
