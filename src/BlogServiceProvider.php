@@ -9,23 +9,24 @@ class BlogServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        // load view or component
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'blog');
-        // load the component
-        Blade::component('blog::components.blog-listing', 'blog-listing');
-        Blade::component('blog::components.blog_details2', 'blog-details2');
+          // load view or component
+          $this->loadViewsFrom(__DIR__.'/resources/views', 'blog');
+          // load the component
+          Blade::component('blog::components.blog-listing', 'blog-listing');
+          Blade::component('blog::components.blog-details', 'blog-details');
 
-        // Load Routes
-        $this->loadRoutesFrom(__DIR__.'/routes/api.php');
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+          // Load Routes
+          $this->loadRoutesFrom(__DIR__.'/routes/api.php');
+          $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
 
-        // Load Migrations
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+          // Load Migrations
+          $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
-        $this->publishes([
-            __DIR__.'/resources/views/stubs/blog_details.stub' => resource_path('views/blog_details.blade.php'),
-        ], 'blog-views');
+          $this->publishes([
+              __DIR__.'/resources/views/stubs/blog_details.stub' => resource_path('views/components/blog-details.blade.php'),
+          ], 'blog-views');
+
     }
 
     public function register()

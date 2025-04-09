@@ -37,6 +37,7 @@
     </style>
 </head>
 <body>
+    @props(['blog'])
 
     <div class="container">
         <div class="blog-container">
