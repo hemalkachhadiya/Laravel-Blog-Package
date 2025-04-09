@@ -16,6 +16,8 @@ class BlogServiceProvider extends ServiceProvider
 
         // Load Routes
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+
 
         // Load Migrations
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
