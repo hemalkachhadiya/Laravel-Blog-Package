@@ -10,7 +10,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# 🚀 Laravel Blog Package by Smartttech
+# 🚀 Laravel Blog Package by SmartTech
 
 A plug-and-play Laravel package to manage and display blog posts with ease. This package includes routes, controllers, components, views, and stubs — everything you need to get started with a blog section in your Laravel app.
 
