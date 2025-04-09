@@ -1,0 +1,2 @@
+
+<x-blog-details :blog="$blog" />

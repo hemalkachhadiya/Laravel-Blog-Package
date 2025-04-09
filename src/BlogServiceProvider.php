@@ -23,9 +23,8 @@ class BlogServiceProvider extends ServiceProvider
         // Load Migrations
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
-        //Publish blog_details blade file to user's resources/views/
         $this->publishes([
-            __DIR__.'/resources/views/stubs/blog_details2.stub' => resource_path('views/blog_details2.blade.php'),
+            __DIR__.'/resources/views/stubs/blog_details.stub' => resource_path('views/blog_details.blade.php'),
         ], 'blog-views');
     }
 
