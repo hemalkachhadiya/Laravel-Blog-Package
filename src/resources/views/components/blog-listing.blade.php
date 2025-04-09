@@ -1,23 +1,35 @@
 @php
-    $perPage = request('per_page', 6); // default
-    $blogs = \Smartttech\Blog\Models\Blog::paginate($perPage)->withQueryString();
-@endphp
+    $perPage = request('per_page', 6);
+    $search = request('search');
 
+    $blogs = \Smartttech\Blog\Models\Blog::query()
+        ->when($search, function ($query, $search) {
+            $query->where('title', 'like', "%{$search}%")
+                  ->orWhere('content', 'like', "%{$search}%")
+                  ->orWhere('slug', 'like', "%{$search}%");
+        })
+        ->paginate($perPage)
+        ->withQueryString();
+@endphp
 <div class="container my-5">
 
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-        <h2 class="fw-bold text-primary">Latest Blogs</h2>
+        <h2 class="fw-bold">Latest Blogs</h2>
 
         <form method="GET" class="d-flex align-items-center gap-2">
-            <label for="per_page" class="form-label m-0">Show:</label>
-            <select class="form-select form-select-sm w-auto" name="per_page" id="per_page" onchange="this.form.submit()">
+            <input type="text" name="search" value="{{ request('search') }}" class="form-control form-control-sm" placeholder="Search blog..." onchange="this.form.submit()">
+
+            <select class="form-select form-select-sm w-auto" name="per_page" onchange="this.form.submit()">
                 <option value="6" {{ $perPage == 6 ? 'selected' : '' }}>6</option>
                 <option value="10" {{ $perPage == 10 ? 'selected' : '' }}>10</option>
                 <option value="25" {{ $perPage == 25 ? 'selected' : '' }}>25</option>
                 <option value="50" {{ $perPage == 50 ? 'selected' : '' }}>50</option>
                 <option value="100" {{ $perPage == 100 ? 'selected' : '' }}>100</option>
             </select>
+
+            {{-- <button type="submit" class="btn btn-sm btn-primary">Search</button> --}}
         </form>
+
     </div>
 
     <div class="row g-4">
