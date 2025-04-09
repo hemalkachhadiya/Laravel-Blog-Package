@@ -4,7 +4,7 @@ namespace Smartttech\Blog\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Smarttech\Blog\Models\Blog;
+use Smartttech\Blog\Models\Blog;
 
 
 class BlogController extends Controller

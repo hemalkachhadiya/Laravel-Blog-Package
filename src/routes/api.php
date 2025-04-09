@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Smarttech\Blog\Controllers\BlogController;
+use Smartttech\Blog\Controllers\BlogController;
 
-// dd('dfdjskhfsdjkfhjksdhfsdjk');
 Route::prefix('api/blog')->group(function () {
     Route::get('/', [BlogController::class, 'index']);
     Route::post('/', [BlogController::class, 'store']);
